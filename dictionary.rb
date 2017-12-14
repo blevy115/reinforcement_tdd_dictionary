@@ -22,13 +22,7 @@ class Dictionary
   end
 
   def find(string)
-    @found_words = {}
-    @words.each do |word, definition|
-      if word.start_with?(string)
-        @found_words[word] =  @words[word]
-      end
-      end
-      return @found_words
+    @words.select {|word, definition| word.start_with?(string)}
   end
 
   def keywords
